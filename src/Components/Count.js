@@ -17,7 +17,11 @@ export class Count extends Component {
 
   render() {
     return (
-      <div>{this.props.render(this.state.counter, this.incrementCounter)}</div>
+      <div>
+        {/* {this.props.render(this.state.counter, this.incrementCounter)} */}
+
+        {this.props.children(this.state.counter, this.incrementCounter)}
+      </div>
     );
   }
 }

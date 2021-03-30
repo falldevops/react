@@ -11,11 +11,12 @@ import User from "./Components/User";
 import Count from "./Components/Count";
 import ClickCounter from "./Components/ClickCounter";
 import HoverCounter from "./Components/HoverCounter";
-
+import ComponentA from "./Components/ComponentA";
+import { UserProvider } from "./Components/userContext";
 function App() {
   return (
     <div className="App">
-      <CounterA date="30-03-2021" />
+      {/* <CounterA date="30-03-2021" /> */}
       {/*       <Header />
       <Welcome /> */}
       {/* <ParentPureComp />
@@ -25,16 +26,19 @@ function App() {
       <CounterA />
       <CounterHover /> */}
       {/* <User name={() => "Oumar"} /> */}
-      <Count
-        render={(count, incrementCounter) => (
+      {/*       <Count>
+        {(count, incrementCounter) => (
           <ClickCounter count={count} incrementCounter={incrementCounter} />
         )}
-      />
-      <Count
-        render={(count, incrementCounter) => (
+      </Count>
+      <Count>
+        {(count, incrementCounter) => (
           <HoverCounter count={count} incrementCounter={incrementCounter} />
         )}
-      />
+      </Count> */}
+      <UserProvider value="Oumar">
+        <ComponentA />
+      </UserProvider>
     </div>
   );
 }
